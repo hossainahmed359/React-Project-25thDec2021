@@ -1,0 +1,6 @@
+.arrival-image {
+    transition: 0.5s ease-in-out;
+}
+.arrival-image:hover {
+    transform: scale(1.08);
+}

@@ -1,0 +1,10 @@
+.product-card{
+    border : none;
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 5px 15px rgb(241, 241, 241);
+}
+.product-card:hover{
+    box-shadow: 5px 5px 20px 10px rgb(221, 221, 221);
+    transform: scale(1.05);
+}
+
