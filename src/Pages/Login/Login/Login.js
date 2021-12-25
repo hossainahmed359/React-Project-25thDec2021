@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Col, Container, FormControl, InputGroup, Button, Spinner } from 'react-bootstrap';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 
@@ -11,7 +11,7 @@ const Login = () => {
 
     // History and Location
     const location = useLocation();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     // setting user input data
     const [loginData, setLoginData] = useState({});
@@ -28,14 +28,14 @@ const Login = () => {
     // Handle Form Submit
     const handleOnSubmit = e => {
         e.preventDefault();
-        handleEmailSignIn(loginData.email, loginData.password, location, history)
+        handleEmailSignIn(loginData.email, loginData.password, location, navigate)
         // console.log(loginData)
         e.target.reset()
     }
 
     // Google signIn
     const useGoogleSignIn = () => {
-        handleGoogleSignIn(location, history);
+        handleGoogleSignIn(location, navigate);
     }
 
     return (

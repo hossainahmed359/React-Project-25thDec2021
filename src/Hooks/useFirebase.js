@@ -28,12 +28,12 @@ const useFirebase = () => {
 
 
     // Google Sign In
-    const handleGoogleSignIn = (location, history) => {
+    const handleGoogleSignIn = (location, navigate) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const destination = location?.state?.from || '/';
-                history.push(destination);
+                navigate(destination);
                 setError(null);
 
                 // Send data to Database
@@ -49,7 +49,7 @@ const useFirebase = () => {
 
 
     // Email Registration and Update Name
-    const handleEmailRegistration = (name, email, password, history) => {
+    const handleEmailRegistration = (name, email, password, navigate) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -64,7 +64,7 @@ const useFirebase = () => {
                         const newUser = { displayName: name, email: email };
                         setUser(newUser);
                         saveToDb(name, email, 'POST');
-                        history.push('/');
+                        navigate('/');
                         //
                     }).catch((error) => {
                         setError(error.message)
@@ -79,13 +79,13 @@ const useFirebase = () => {
 
 
     // Email Sign In
-    const handleEmailSignIn = (email, password, location, history) => {
+    const handleEmailSignIn = (email, password, location, navigate) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setError(null)
                 const destination = location?.state?.from || '/';
-                history.push(destination);
+                navigate(destination);
                 // Sign in success
                 // const user = result.user;
 

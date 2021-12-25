@@ -19,23 +19,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faCreditCard, faShoppingCart, faStar, faSignOutAlt, faTasks, faPlusSquare, faUserPlus, faMinusCircle, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 // React Router Components
-import {
-    Route,
-    Link,
-    useRouteMatch,
-    useHistory
-} from "react-router-dom";
 
 
-import Payment from '../UsersSection/Payment/Payment';
-import MyOrders from '../UsersSection/MyOrders/MyOrders';
-import Review from '../UsersSection/Review/Review';
 import Button from '@mui/material/Button';
-import MakeAdmin from '../AdminSection/MakeAdmin/MakeAdmin';
-import DashboardHome from './DashboardHome/DashboardHome';
-import ManageAllOrders from '../AdminSection/ManageAllOrders/ManageAllOrders';
-import AddProduct from '../AdminSection/AddProduct/AddProduct';
-import ManageProducts from '../AdminSection/ManageProducts/ManageProducts';
+
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 
 // Drawer Width
@@ -46,7 +34,7 @@ const drawerWidth = 250;
 const Dashboard = () => {
 
     // Load Signed In User
-    const { user, handleSignOut, admin } = useAuth();
+    const { handleSignOut, admin } = useAuth();
 
 
     // Dashboard Options
@@ -56,18 +44,17 @@ const Dashboard = () => {
         setMobileOpen(!mobileOpen);
     };
 
-    // Nested Route Options
-    let { path, url } = useRouteMatch();
+
 
 
     // History
-    const history = useHistory()
+    const navigate = useNavigate()
 
     // Go back home 
     const handleBackToHome = () => {
         const proceed = window.confirm('Leave Dashboard ?');
         if (proceed) {
-            history.push('/')
+            navigate('/')
         }
     }
 
@@ -103,20 +90,20 @@ const Dashboard = () => {
                 <div className="dashboard-navigation" style={{ overflow: 'hidden' }}>
                     <ul>
                         <li><Button onClick={handleBackToHome} style={{ margin: '10px -6px', marginBottom: '20px', color: 'black', fontFamily: 'poppins' }} ><span style={{ marginRight: '10px' }}>{leftArrowIcon}</span> Back To Home</Button></li>
-                        <li><Link to={`${url}`}><span>{homeIcon}</span> Default</Link></li>
+                        <li><Link to={`/dashboard`}><span>{homeIcon}</span> Default</Link></li>
                     </ul>
                     {admin ?
                         <ul>
-                            <li><Link to={`${url}/manageAllOrders`}><span>{taskIcon}</span> Manage All Orders</Link></li>
-                            <li> <Link to={`${url}/addProduct`}><span style={{ marginRight: '8px' }}>{plusIcon}</span> Add A Product</Link></li>
-                            <li><Link to={`${url}/mangeProducts`}><span>{productManageIcon}</span> Manage Products</Link></li>
-                            <li><Link to={`${url}/makeAdmin`}><span>{userAddIcon}</span> Make Admin</Link></li>
+                            <li><Link to={`/dashboard/manageAllOrders`}><span>{taskIcon}</span> Manage All Orders</Link></li>
+                            <li> <Link to={`/dashboard/addProduct`}><span style={{ marginRight: '8px' }}>{plusIcon}</span> Add A Product</Link></li>
+                            <li><Link to={`/dashboard/mangeProducts`}><span>{productManageIcon}</span> Manage Products</Link></li>
+                            <li><Link to={`/dashboard/makeAdmin`}><span>{userAddIcon}</span> Make Admin</Link></li>
                         </ul>
                         :
                         <ul>
-                            <li><Link to={`${url}/payment`}><span >{paymentIcon}</span> Payment</Link></li>
-                            <li> <Link to={`${url}/myOrders`}><span>{cartIcon}</span> My Orders</Link></li>
-                            <li><Link to={`${url}/review`}><span>{startIcon}</span> Review</Link></li>
+                            <li><Link to={`/dashboard/payment`}><span >{paymentIcon}</span> Payment</Link></li>
+                            <li> <Link to={`/dashboard/myOrders`}><span>{cartIcon}</span> My Orders</Link></li>
+                            <li><Link to={`/dashboard/review`}><span>{startIcon}</span> Review</Link></li>
                         </ul>
                     }
                     <ul>
@@ -199,23 +186,9 @@ const Dashboard = () => {
                     <Toolbar />
 
                     {/* ****************************************** General User and Admin Routes ****************************************** */}
-                    <Route exact path={path}><DashboardHome></DashboardHome></Route>
-                    {admin ?
-                        <div>
-                            {/* Admin */}
-                            <Route path={`${url}/manageAllOrders`}><ManageAllOrders></ManageAllOrders></Route>
-                            <Route path={`${url}/addProduct`}><AddProduct></AddProduct></Route>
-                            <Route path={`${url}/makeAdmin`}><MakeAdmin></MakeAdmin></Route>
-                            <Route path={`${url}/mangeProducts`}><ManageProducts></ManageProducts></Route>
-                        </div>
-                        :
-                        <div>
-                            {/* Regular User */}
-                            <Route path={`${url}/payment`}><Payment></Payment></Route>
-                            <Route path={`${url}/myOrders`}><MyOrders userEmail={user.email}></MyOrders></Route>
-                            <Route path={`${url}/review`}><Review></Review></Route>
-                        </div>
-                    }
+
+
+                    <Outlet></Outlet>
                 </Box>
             </Box>
         </div>

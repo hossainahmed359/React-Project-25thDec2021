@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Col, Container, FormControl, InputGroup, Button, Spinner } from 'react-bootstrap';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 
@@ -11,7 +11,7 @@ const Register = () => {
 
     // History and Location
     const location = useLocation();
-    const history = useHistory();
+    const navigate = useNavigate()
 
     // setting user input data
     const [loginData, setLoginData] = useState({});
@@ -30,7 +30,7 @@ const Register = () => {
         e.preventDefault();
         if (loginData.password === loginData.password2) {
             // console.log(loginData)
-            handleEmailRegistration(loginData.name, loginData.email, loginData.password, history)
+            handleEmailRegistration(loginData.name, loginData.email, loginData.password, navigate)
             e.target.reset()
         }
         else {
@@ -40,7 +40,7 @@ const Register = () => {
 
     // Google signIn
     const useGoogleSignIn = () => {
-        handleGoogleSignIn(location, history);
+        handleGoogleSignIn(location, navigate);
     }
 
 

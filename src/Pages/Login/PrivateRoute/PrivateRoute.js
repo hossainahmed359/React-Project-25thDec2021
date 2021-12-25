@@ -1,13 +1,13 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-import { Redirect, Route } from 'react-router';
+import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
-const PrivateRoute = ({ children, ...rest }) => {
+const PrivateRoute = ({ children }) => {
 
     // Firebase
     const { user, isLoading } = useAuth();
-
+    const location = useLocation();
     // handle redirect on Page reload
     if (isLoading) {
         return (
@@ -15,24 +15,12 @@ const PrivateRoute = ({ children, ...rest }) => {
         );
     }
 
+    if (user?.email) { return children }
+
     // Redirect
-    return (
-        <Route
-            {...rest}
-            render={({ location }) => user.email
-                ?
-                children
-                :
-                <Redirect
-                    to={{
-                        pathname: '/login',
-                        state: { from: location }
-                    }}
-                />
-            }
-        >
-        </Route>
-    );
+    return <Navigate to="/login" state={{ from: location }} />
+
+
 };
 
 export default PrivateRoute;
