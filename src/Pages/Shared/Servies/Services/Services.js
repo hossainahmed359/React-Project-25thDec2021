@@ -17,8 +17,8 @@ const Services = () => {
         <div>
             <ServicesHeader></ServicesHeader>
             <Container>
-                <Row xs={1} md={2} lg={3} className="g-5 my-5">
-                    {products.map(product => products.indexOf(product) < 6 &&
+                <Row xs={1} md={2} lg={3} className="my-5">
+                    {products.map(product => products.indexOf(product) < 4 &&
                         <SingleService
                             key={product._id}
                             product={product}

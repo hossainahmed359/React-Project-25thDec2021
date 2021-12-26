@@ -1,3 +1,7 @@
+.single-service-container{
+    width: 25%;
+}
+
 .product-card{
     border : none;
     transition: 0.5s ease-in-out;

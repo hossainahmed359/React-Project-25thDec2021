@@ -32,11 +32,9 @@ const Reviews = () => {
             <div className="d-flex align-items-center justify-content-center"/*  style={{ ...custombg, borderRadius: '10px' }} */>
                 <h2 style={{ color: '#E52727' }} className=''>{/* <span style={{ marginRight: "-20px" }} className="fs-1">{starIcon}</span> */} Reviews</h2>
             </div>
-            <Container>
 
-            </Container>
             <Container>
-                <Row xs={1} md={2} lg={3} className="g-4 my-5">
+                <Row xs={1} md={2} lg={3} className="g-3 my-5">
                     {ratings.map(sigleRating => <SingleReview key={sigleRating._id} sigleRating={sigleRating}></SingleReview>)}
                 </Row>
             </Container>

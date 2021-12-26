@@ -14,17 +14,17 @@ const SingleService = ({ product }) => {
 
 
     return (
-        <div>
+        <div className='single-service-container'>
             <Col>
                 <Card className="product-card">
                     <div className="parentDiv">
                         <Card.Img variant="top" className="border rounded" src={image} />
                     </div>
-                    <Card.Body className="text-start">
+                    <Card.Body className="text-center">
                         <Card.Title className="fs-3">{name}</Card.Title>
-                        <Card.Text className="fs-2" style={{ color: '#E52727' }}>${price}</Card.Text>
+                        <Card.Text className="fs-3" style={{ color: '#E52727' }}>${price}</Card.Text>
                         <Card.Text style={{ fontFamily: "'roboto", textAlign: 'justify' }}>
-                            {description.slice(0, 130)}...
+                            {description.slice(0, 60)}...
                         </Card.Text>
                     </Card.Body>
                     <Link to={`/purchase/${_id}`}><Button className="w-50 mx-auto mb-4" variant="danger">
