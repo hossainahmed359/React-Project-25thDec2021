@@ -41,7 +41,7 @@ const Review = () => {
         e.preventDefault();
         // Include star rating user ratin
         console.log(userRating)
-        fetch('https://pure-badlands-75944.herokuapp.com/ratings', {
+        fetch('https://murmuring-spire-81873.herokuapp.com/ratings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ const Review = () => {
                             multiline
                             rows={4}
                         />
-                        <Typography style={{ margin: '7px 5px', color: '#E52727' }}>Double click on the star</Typography>
+                        <Typography style={{ margin: '7px 5px', color: '#FFB568' }}>Double click on the star</Typography>
                         <Rating onClick={handleRating} ratingValue={rating} />
                         <br />
                         <Button style={{ textAlign: 'start', marginLeft: '5px', marginTop: '5px', padding: '6px 30px' }} type="submit" variant="contained" >Submit</Button>

@@ -1,6 +1,4 @@
-.single-service-container{
-    width: 25%;
-}
+
 
 .product-card{
     border : none;
@@ -9,6 +7,6 @@
 }
 .product-card:hover{
     box-shadow: 5px 5px 20px 10px rgb(221, 221, 221);
-    transform: scale(1.05);
+    /* transform: scale(1.02); */
 }
 

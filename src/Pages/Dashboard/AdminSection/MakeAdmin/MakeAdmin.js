@@ -27,7 +27,7 @@ const MakeAdmin = () => {
     const handleOnSubmit = e => {
         e.preventDefault();
         // send request to database
-        fetch('https://pure-badlands-75944.herokuapp.com/makeAdmin', {
+        fetch('https://murmuring-spire-81873.herokuapp.com/makeAdmin', {
             method: 'PUT',
             headers: {
                 admin_email: `${user.email}`,

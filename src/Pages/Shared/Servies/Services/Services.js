@@ -8,7 +8,7 @@ import SingleService from '../SingleService/SingleService';
 const Services = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://pure-badlands-75944.herokuapp.com/products')
+        fetch('https://murmuring-spire-81873.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -17,8 +17,8 @@ const Services = () => {
         <div>
             <ServicesHeader></ServicesHeader>
             <Container>
-                <Row xs={1} md={2} lg={3} className="my-5">
-                    {products.map(product => products.indexOf(product) < 4 &&
+                <Row xs={1} md={2} lg={3} className="my-5 g-5">
+                    {products.map(product => products.indexOf(product) < 6 &&
                         <SingleService
                             key={product._id}
                             product={product}

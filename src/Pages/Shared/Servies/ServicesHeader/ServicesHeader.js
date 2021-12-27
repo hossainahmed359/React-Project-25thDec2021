@@ -6,7 +6,9 @@ const ServicesHeader = () => {
     return (
         <div>
             <br />
-            <h2 style={{ color: '#E52727' }} className='my-5'>EXPLORE</h2>
+            <br />
+            <br />
+            <h3 className='py-5'>Explore</h3>
         </div>
     );
 };

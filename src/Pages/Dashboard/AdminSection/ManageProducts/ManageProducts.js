@@ -21,7 +21,7 @@ const ManageProducts = () => {
 
     // Get Products
     useEffect(() => {
-        fetch(`https://pure-badlands-75944.herokuapp.com/products`)
+        fetch(`https://murmuring-spire-81873.herokuapp.com/products`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -34,7 +34,7 @@ const ManageProducts = () => {
         setReload(false)
         const proceed = window.confirm('Are you sure you want to delete this product ?')
         if (proceed) {
-            fetch(`https://pure-badlands-75944.herokuapp.com/deleteProduct/${productId}`, {
+            fetch(`https://murmuring-spire-81873.herokuapp.com/deleteProduct/${productId}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -63,8 +63,8 @@ const ManageProducts = () => {
                             <Grid key={singleProduct._id} item xs={4} md={6} lg={4} style={{ marginTop: '15px' }}>
                                 <Card className="single-order-card" sx={{ maxWidth: 345 }} >
                                     <CardMedia
+                                        style={{ width: '100px', height: '170px', objectFit: 'cover', margin: '10px auto' }}
                                         component="img"
-                                        height="300px"
                                         image={singleProduct.image}
                                         alt=""
                                     />
@@ -72,7 +72,7 @@ const ManageProducts = () => {
                                         <Typography gutterBottom variant="h5" component="div">
                                             {singleProduct.name}
                                         </Typography >
-                                        <Typography color="error" gutterBottom variant="h5" component="div">
+                                        <Typography style={{ color: '#FFB568' }} gutterBottom variant="h5" component="div">
                                             ${singleProduct.price}
                                         </Typography>
                                         <Typography variant="body2" color="">

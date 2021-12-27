@@ -16,10 +16,10 @@
     transition: 0.5 ease-in-out;
 }
 .dashboard-navigation a:hover {
-    color: #E52727 ;
+    color: #FFB568 ;
     font-size: 18px;
 }
 .dashboard-navigation span {
-    color: #E52727 ;
+    color: #FFB568 ;
     margin-right: 5px;
 }

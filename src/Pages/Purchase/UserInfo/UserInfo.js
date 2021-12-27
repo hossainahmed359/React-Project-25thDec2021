@@ -28,7 +28,7 @@ const UserInfo = ({ user, singleProduct }) => {
 
 
         // Send Data to the server
-        fetch('https://pure-badlands-75944.herokuapp.com/order', {
+        fetch('https://murmuring-spire-81873.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -108,9 +108,9 @@ const UserInfo = ({ user, singleProduct }) => {
                         </InputGroup>
 
                         <Button
+                            style={{ backgroundColor: '#FFB568' }}
                             type="submit"
-                            variant="danger"
-                            className="w-100 px-3 py-3 my-2 border rounded-pill"
+                            className="submit_button w-100 px-3 py-3 my-2 border rounded-pill"
                         ><span className="px-2">{cartIcon}</span>
                             Add To Cart
                         </Button>

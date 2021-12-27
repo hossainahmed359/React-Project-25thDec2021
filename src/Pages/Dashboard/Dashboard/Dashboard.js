@@ -107,7 +107,7 @@ const Dashboard = () => {
                         </ul>
                     }
                     <ul>
-                        <li><Button onClick={handleLogOut} variant="outlined" style={{ marginTop: '25px' }} color="error"><span>{logOutIcon}</span> Log Out</Button></li>
+                        <li><Button onClick={handleLogOut} variant="outlined" style={{ marginTop: '25px' }} color="error"><span style={{ color: 'red' }}>{logOutIcon}</span> Log Out</Button></li>
                     </ul>
                 </div>
             </List>
@@ -127,7 +127,7 @@ const Dashboard = () => {
                     position="fixed"
                     sx={{
                         backgroundColor: 'white',
-                        color: '#E52727 ',
+                        color: '#FFB568 ',
                         width: { sm: `calc(100% - ${drawerWidth}px)` },
                         ml: { sm: `${drawerWidth}px` },
                     }}

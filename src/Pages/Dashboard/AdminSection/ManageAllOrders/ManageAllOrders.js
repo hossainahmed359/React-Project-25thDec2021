@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
 
     // Get All orders
     useEffect(() => {
-        fetch(`https://pure-badlands-75944.herokuapp.com/allOrders/${user.email}`)
+        fetch(`https://murmuring-spire-81873.herokuapp.com/allOrders/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -37,7 +37,7 @@ const ManageAllOrders = () => {
         setReload(false)
         const proceed = window.confirm('Are you sure you want to Delete?');
         if (proceed) {
-            fetch(`https://pure-badlands-75944.herokuapp.com/deleteOrder/${orderId}`, {
+            fetch(`https://murmuring-spire-81873.herokuapp.com/deleteOrder/${orderId}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -52,7 +52,7 @@ const ManageAllOrders = () => {
     // Handle Update Order status
     const handleUpadateStatus = orderID => {
         setReload(false)
-        fetch(`https://pure-badlands-75944.herokuapp.com/updateOrder/${orderID}`, {
+        fetch(`https://murmuring-spire-81873.herokuapp.com/updateOrder/${orderID}`, {
             method: 'PUT'
         })
             .then(res => res.json())

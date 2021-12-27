@@ -12,29 +12,20 @@ const Reviews = () => {
 
     // Load Ratings
     useEffect(() => {
-        fetch('https://pure-badlands-75944.herokuapp.com/ratings')
+        fetch('https://murmuring-spire-81873.herokuapp.com/ratings')
             .then(res => res.json())
             .then(data => setRatings(data));
     }, []);
 
 
-    // CSS for banner
-    /*   const custombg = {
-          background: `url("https://i.ibb.co/xCQSRXW/servies-banner.jpg")`,
-          height: '170px'
-      } */
 
-    // fontawesome
-    /* const starIcon = <FontAwesomeIcon icon={faStarHalf} /> */
 
     return (
-        <div style={{ margin: '70px 0' }}>
-            <div className="d-flex align-items-center justify-content-center"/*  style={{ ...custombg, borderRadius: '10px' }} */>
-                <h2 style={{ color: '#E52727' }} className=''>{/* <span style={{ marginRight: "-20px" }} className="fs-1">{starIcon}</span> */} Reviews</h2>
-            </div>
+        <div >
+            <h3 style={{ color: '' }} className='py-5'>Reviews</h3>
 
             <Container>
-                <Row xs={1} md={2} lg={3} className="g-3 my-5">
+                <Row xs={1} md={2} lg={3} className="g-3 mb-5">
                     {ratings.map(sigleRating => <SingleReview key={sigleRating._id} sigleRating={sigleRating}></SingleReview>)}
                 </Row>
             </Container>

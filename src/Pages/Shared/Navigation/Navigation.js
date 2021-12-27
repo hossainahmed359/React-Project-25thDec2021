@@ -12,12 +12,12 @@ const Navigation = () => {
 
     return (
         <>
-            <Navbar className="border border-bottom " expand="lg" style={{ fontWeight: '400', fontFamily: 'roboto' }}>
-                <Container fluid className="my-2">
-                    <NavLink className="brand-name" to="/home">Bikers World</NavLink>
+            <Navbar className="border border-bottom fs-5" expand="lg" style={{ fontWeight: '400', fontFamily: 'roboto' }}>
+                <Container className="my-2">
+                    <NavLink className="brand-name" to="/home">Watch Store</NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="navigation ms-auto">
+                        <Nav className="navigation ms-auto" >
                             <NavLink to="/">Home</NavLink>
                             <NavLink to="/explore">Explore</NavLink>
                             {user.email && <NavLink to="/dashboard">Dashboard</NavLink>}

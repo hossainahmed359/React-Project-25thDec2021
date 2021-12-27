@@ -29,7 +29,7 @@ const SingleOrder = ({ order, handleCancelOrder }) => {
 
     // Find Product With id
     useEffect(() => {
-        fetch(`https://pure-badlands-75944.herokuapp.com/signleProduct/${productId}`)
+        fetch(`https://murmuring-spire-81873.herokuapp.com/signleProduct/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, []);
@@ -46,15 +46,15 @@ const SingleOrder = ({ order, handleCancelOrder }) => {
         <>
             <Card className="single-order-card" sx={{ maxWidth: 345, my: 2 }}>
                 <CardMedia
+                    style={{ width: '100px', height: '170px', objectFit: 'cover', margin: '10px auto' }}
                     component="img"
-                    height="100%"
                     image={image}
                     alt="Paella dish"
                 />
                 <CardContent>
                     <Box sx={{ textAlign: 'left', mb: '5' }}>
                         <Typography variant="h5">{name}</Typography>
-                        <Typography variant="h5" style={{ margin: '10px 0' }} color="#E52727">${price}</Typography>
+                        <Typography variant="h5" style={{ margin: '10px 0' }} color="#FFB568">${price}</Typography>
                         <Typography variant="body2" color="">
                             {description?.slice(0, 120)}...
                         </Typography>

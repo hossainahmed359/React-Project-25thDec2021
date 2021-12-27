@@ -1,12 +1,12 @@
 .brand-name  {
-    color: #E52727 ;
+    color: #FFB568 ;
     text-decoration: none;
     font-weight: 500;
     font-size: 1.25em;
     margin: 5px 15px;
 }
 .brand-name:hover {
-    color: #E52727 ;
+    color: #FFB568 ;
 }
 
 .navigation a {
@@ -17,5 +17,5 @@
     margin: 5px 15px;
 }
 .navigation a:hover {
-    color: #E52727 ;
+    color: #FFB568 ;
 }

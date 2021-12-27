@@ -25,7 +25,7 @@ const AddProduct = () => {
         e.preventDefault();
 
         // sending data to database
-        fetch(`https://pure-badlands-75944.herokuapp.com/addProduct`, {
+        fetch(`https://murmuring-spire-81873.herokuapp.com/addProduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

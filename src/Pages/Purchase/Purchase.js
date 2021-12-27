@@ -17,7 +17,7 @@ const Purchase = () => {
 
     // Get Single Product Details
     useEffect(() => {
-        fetch(`https://pure-badlands-75944.herokuapp.com/signleProduct/${product_id}`)
+        fetch(`https://murmuring-spire-81873.herokuapp.com/signleProduct/${product_id}`)
             .then(res => res.json())
             .then(data => setSingleProduct(data))
     }, []);
@@ -44,7 +44,7 @@ const Purchase = () => {
                                     <Card.Body >
                                         <Card.Title className="fs-1">{singleProduct.name}</Card.Title>
                                         <div className="text-start">
-                                            <Card.Text className="fs-2" style={{ color: '#E52727 ' }}>${singleProduct.price}</Card.Text>
+                                            <Card.Text className="fs-2" style={{ color: '#FFB568' }}>${singleProduct.price}</Card.Text>
                                             <Card.Text className="" style={{ fontFamily: "'roboto", textAlign: 'justify' }}>
                                                 {singleProduct.description}
                                             </Card.Text>

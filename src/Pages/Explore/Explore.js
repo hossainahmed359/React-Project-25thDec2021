@@ -10,24 +10,19 @@ const Explore = () => {
     // get products and set data using state
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://pure-badlands-75944.herokuapp.com/products')
+        fetch('https://murmuring-spire-81873.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
 
 
 
-    // custom style
-    const custombg = {
-        background: `url("https://i.ibb.co/xCQSRXW/servies-banner.jpg")`,
-        height: '150px'
-    }
 
     return (
         <div >
             <Navigation></Navigation>
-            <div className="d-flex align-items-center justify-content-center mb-5" style={custombg}>
-                <h1 style={{ color: '#E52727', fontFamily: "'Poppins', sans-serif", fontWeight: '600' }} className='my-5'>EXPLORE YOUR DREAM</h1>
+            <div className="d-flex align-items-center justify-content-center mb-5" >
+                <h3 className='py-5'>EXPLORE YOUR DREAM</h3>
             </div>
             <Container>
                 <Row xs={1} md={2} lg={3} className="g-5 mb-5">
