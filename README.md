@@ -1,9 +1,9 @@
-# https://bikers-world-9dc58.web.app/
-## Bikers World
+# https://watch-store-c64e2.web.app/
+## Watch Store
 
 ### About this website
 
-- Website Purpose :  This is a niche motorcycle shop related website.
+- Website Purpose :  This is a niche watch shop related website.
 - Responsiveness: This is a desktop, tablet, mobile flexible website . So user can feel free to visit this website from any device 
 - User Options : Users can see items and browse the freeley without login or registration
 - Front End Technology :  This website uses React as a front end library . 
